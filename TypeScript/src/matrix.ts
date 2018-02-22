@@ -28,4 +28,11 @@ export class Matrix<T>
       return column;
     });
   }
+
+  public getRow(index:number) :T[] {
+    return this.data.reduce((current:T[], column:T[]) => {
+      current.push(column[index]);
+      return current;
+    }, []);
+  }
 }

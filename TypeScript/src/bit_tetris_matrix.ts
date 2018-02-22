@@ -14,8 +14,8 @@ export class BitTetrisMatrix extends Matrix<number>
   }
 
   private isFullRow(i: number) :boolean {
-    return this.data.reduce((current:boolean, column:number[]) => {
-      return current && column[i];
+    return this.getRow(i).reduce((current:boolean, value:number) => {
+      return current && value;
     }, true);
   }
 }
